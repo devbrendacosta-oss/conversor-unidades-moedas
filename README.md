@@ -1,12 +1,24 @@
 # Conversor de Unidades e Moedas
 
-**Grupo 5** — Disciplina de Programação Orientada a Objetos / Sistemas de Desenvolvimento
+**Grupo 5** — Disciplina de Elicitação e programação / Sistemas de Desenvolvimento
+
+## 👥 Desenvolvedores
+* Anna Gabriela Dimas Furtado
+* Brenda Sousa Costa 
+* Nikoly Karoline De Paula Pereira
+* Maria Vitória Pereira dos Santos 
+* Matheus Souza de Jesus
+* Thallys Maycon de Jesus Silva 
+
+---
 
 ## 📌 Sobre o projeto
 
 Este é um sistema de console desenvolvido em **Java**, executado na IDE **Eclipse**, que realiza conversões entre diferentes unidades de medida e moedas. Durante a execução, cada conversão feita pelo usuário é registrada em um **histórico em memória**, permitindo consultar as operações realizadas na sessão atual.
 
 A proposta do projeto foi ir além de apenas escrever código: pensar em como um usuário navegaria pelo sistema, validar as entradas com cuidado e organizar a lógica em classes bem definidas, aplicando conceitos de modularização e encapsulamento.
+
+---
 
 ## ⚙️ Funcionalidades
 
@@ -18,6 +30,8 @@ O sistema é dividido em um menu principal com 4 categorias:
 - **🕘 Histórico** — exibe todas as conversões realizadas durante a sessão
 
 Cada submenu permite voltar ao menu principal (opção `0`), e o sistema só é encerrado quando o usuário escolhe sair pelo menu principal.
+
+---
 
 ## 🧱 Estrutura do projeto
 
@@ -34,11 +48,15 @@ ConversorUnidadesMoedas/
 
 Cada classe de conversão tem uma responsabilidade única, o que mantém o `Main` focado no fluxo do menu e na interação com o usuário — sem misturar regra de negócio com interface de console.
 
+---
+
 ## ✅ Validações implementadas
 
 - **Entradas não numéricas** (ex.: digitar `abc` em vez de um número) são rejeitadas com uma mensagem de erro, e o programa pede a entrada novamente.
 - **Valores negativos** são bloqueados onde não fazem sentido físico ou financeiro (comprimento, moedas e Kelvin), exibindo mensagem de erro.
 - **Opções inválidas de menu** exibem aviso e retornam ao próprio menu, sem travar o programa.
+
+---
 
 ## ▶️ Como executar
 
@@ -47,6 +65,8 @@ Cada classe de conversão tem uma responsabilidade única, o que mantém o `Main
 3. Execute como **Java Application** (`Run As → Java Application`).
 4. Interaja pelo console: escolha uma categoria, informe os valores solicitados e veja o resultado.
 5. A qualquer momento, escolha a opção **4** no menu principal para ver o histórico da sessão.
+
+---
 
 ## 🧪 Testes realizados
 
@@ -62,6 +82,8 @@ Os testes cobriram os três módulos de conversão, tratamento de entradas invá
 | 6 | Kelvin negativo | -10 K | mensagem de erro | ✅ OK |
 | 7 | Histórico | várias conversões | histórico exibido corretamente | ✅ OK |
 
+---
+
 ## 🛠️ Etapas de desenvolvimento
 
 1. Criação da estrutura inicial do projeto e das classes principais
@@ -73,13 +95,11 @@ Os testes cobriram os três módulos de conversão, tratamento de entradas invá
 7. Adição da validação de valores negativos quando necessário
 8. Realização dos testes e ajustes finais
 
+---
+
 ## 🧑‍💻 Tecnologias
 
 - Java SE
 - IDE Eclipse
 - `java.util.Scanner` para entrada de dados
 - `java.util.ArrayList` para o histórico (100% em memória, sem persistência em arquivo ou banco de dados)
-
-## 👥 Autores
-
-Grupo 5
