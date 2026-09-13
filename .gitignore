@@ -1,0 +1,10 @@
+# Eclipse - arquivos gerados/locais
+bin/
+.settings/
+
+# Compilados
+*.class
+
+# Sistema
+.DS_Store
+Thumbs.db
