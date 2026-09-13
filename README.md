@@ -50,20 +50,6 @@ Cada classe de conversão tem uma responsabilidade única, o que mantém o `Main
 
 ---
 
-## ✅ Conformidade com os requisitos do projeto
-
-| Requisito | Como foi atendido |
-|---|---|
-| Menu de categorias | Menu principal com Temperatura, Comprimento, Moedas e Histórico |
-| Métodos estáticos por categoria | `ConversorTemperatura`, `ConversorComprimento` e `ConversorMoeda` |
-| Histórico em `ArrayList` | Classe `Historico`, dados mantidos só em memória |
-| Interface via console | `Scanner` para entrada e `System.out` para saída — sem interface gráfica |
-| Sem persistência em arquivo/banco | Histórico existe apenas durante a execução do programa |
-| Modularização (sem lógica no `main`) | Cada menu é um método separado; conversões ficam em classes próprias |
-| Tratamento de exceções | Validação de texto inválido e de valores negativos |
-
----
-
 ## ✅ Validações implementadas
 
 - **Entradas não numéricas** (ex.: digitar `abc` em vez de um número) são rejeitadas com uma mensagem de erro, e o programa pede a entrada novamente.
@@ -95,6 +81,20 @@ Os testes cobriram os três módulos de conversão, tratamento de entradas invá
 | 5 | Valor negativo em comprimento | -5 m | mensagem de erro | ✅ OK |
 | 6 | Kelvin negativo | -10 K | mensagem de erro | ✅ OK |
 | 7 | Histórico | várias conversões | histórico exibido corretamente | ✅ OK |
+
+---
+
+## ✅ Conformidade com os requisitos do projeto
+
+| Requisito | Como foi atendido |
+|---|---|
+| Menu de categorias | Menu principal com Temperatura, Comprimento, Moedas e Histórico |
+| Métodos estáticos por categoria | `ConversorTemperatura`, `ConversorComprimento` e `ConversorMoeda` |
+| Histórico em `ArrayList` | Classe `Historico`, dados mantidos só em memória |
+| Interface via console | `Scanner` para entrada e `System.out` para saída — sem interface gráfica |
+| Sem persistência em arquivo/banco | Histórico existe apenas durante a execução do programa |
+| Modularização (sem lógica no `main`) | Cada menu é um método separado; conversões ficam em classes próprias |
+| Tratamento de exceções | Validação de texto inválido e de valores negativos |
 
 ---
 
