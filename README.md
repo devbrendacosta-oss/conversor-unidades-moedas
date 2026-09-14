@@ -14,6 +14,7 @@
 
 ## 🎥 Vídeo do Pitch Técnico
 
+https://drive.google.com/file/d/1T2IkgaPahvywIhIsdObAou2QcvbZaGR9/view?usp=drivesdk
 
 ---
 
