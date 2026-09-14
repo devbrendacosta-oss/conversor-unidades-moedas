@@ -12,6 +12,11 @@
 
 ---
 
+## 🎥 Vídeo do Pitch Técnico
+
+
+---
+
 ## 📌 Sobre o projeto
 
 Este é um sistema de console desenvolvido em **Java**, executado na IDE **Eclipse**, que realiza conversões entre diferentes unidades de medida e moedas. Durante a execução, cada conversão feita pelo usuário é registrada em um **histórico em memória**, permitindo consultar as operações realizadas na sessão atual.
