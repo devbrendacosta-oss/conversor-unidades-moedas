@@ -1,31 +1,42 @@
-# Conversor de Unidades e Moedas
+# 🔄 Conversor de Unidades e Moedas
 
-**Grupo 5** — Disciplina de Elicitação e programação / Sistemas de Desenvolvimento
+## 🎓 Identificação Acadêmica
 
-## 👥 Desenvolvedores
-* Anna Gabriela Dimas Furtado
-* Brenda Sousa Costa 
-* Nikoly Karoline De Paula Pereira
-* Maria Vitória Pereira dos Santos 
-* Matheus Souza de Jesus
-* Thallys Maycon de Jesus Silva 
-## 👤​Professor
-* Hudson Neves E Silva
+* **Instituição de Ensino:** Centro Universitário do Planalto Central Apparecido dos Santos (UNICEPLAC)
+* **Curso:** Engenharia de Software
+* **Disciplina:** Elicitação e Programação 
+* **Orientador:** Profº Hudson Neves
 
+## 👥 Equipe do Projeto
 
----
+| Desenvolvedores |
+|---|
+| Anna Gabriela Dimas Furtado |
+| Brenda Sousa Costa |
+| Nikoly Karoline De Paula Pereira |
+| Maria Vitória Pereira dos Santos |
+| Matheus Souza de Jesus |
+| Thallys Maycon de Jesus Silva |
 
 ## 🎥 Vídeo do Pitch Técnico
 
-https://drive.google.com/file/d/1T2IkgaPahvywIhIsdObAou2QcvbZaGR9/view?usp=drivesdk
+🔗 [Assista aqui](https://drive.google.com/file/d/1T2IkgaPahvywIhIsdObAou2QcvbZaGR9/view?usp=drivesdk)
 
 ---
 
-## 📌 Sobre o projeto
+## 📌 Descrição
 
 Este é um sistema de console desenvolvido em **Java**, executado na IDE **Eclipse**, que realiza conversões entre diferentes unidades de medida e moedas. Durante a execução, cada conversão feita pelo usuário é registrada em um **histórico em memória**, permitindo consultar as operações realizadas na sessão atual.
 
 A proposta do projeto foi ir além de apenas escrever código: pensar em como um usuário navegaria pelo sistema, validar as entradas com cuidado e organizar a lógica em classes bem definidas, aplicando conceitos de modularização e encapsulamento.
+
+## 🎯 Objetivos
+
+**Objetivo geral:** oferecer uma ferramenta de console simples e confiável para conversão de unidades de temperatura, comprimento e moedas, com registro do histórico de operações realizadas durante a sessão.
+
+**Problema que o sistema resolve:** evita cálculos manuais de conversão, centralizando as fórmulas em um único sistema validado, com tratamento de entradas inválidas e valores fora do domínio físico/financeiro.
+
+**Público-alvo:** A ser definido pela equipe
 
 ---
 
@@ -40,9 +51,60 @@ O sistema é dividido em um menu principal com 4 categorias:
 
 Cada submenu permite voltar ao menu principal (opção `0`), e o sistema só é encerrado quando o usuário escolhe sair pelo menu principal.
 
+### ✅ Validações implementadas
+
+- **Entradas não numéricas** (ex.: digitar `abc` em vez de um número) são rejeitadas com uma mensagem de erro, e o programa pede a entrada novamente.
+- **Valores negativos** são bloqueados onde não fazem sentido físico ou financeiro (comprimento, moedas e Kelvin), exibindo mensagem de erro.
+- **Opções inválidas de menu** exibem aviso e retornam ao próprio menu, sem travar o programa.
+
 ---
 
-## 🧱 Estrutura do projeto
+## 🧑‍💻 Tecnologias Utilizadas
+
+- Java SE
+- IDE Eclipse
+- `java.util.Scanner` para entrada de dados
+- `java.util.ArrayList` para o histórico (100% em memória, sem persistência em arquivo ou banco de dados)
+
+### Frameworks e bibliotecas
+
+A ser definido pela equipe (projeto utiliza apenas bibliotecas padrão do Java SE, sem frameworks externos)
+
+---
+
+## 🏗️ Arquitetura da Solução
+
+Sistema de console (aplicação Java standalone), sem camadas de rede ou interface gráfica. A lógica é organizada por responsabilidade em classes estáticas de conversão, uma classe de domínio para o histórico e uma classe `Main` responsável apenas pelo fluxo dos menus e pela interação com o usuário:
+
+- Cada classe de conversão tem uma responsabilidade única, o que mantém o `Main` focado no fluxo do menu e na interação com o usuário — sem misturar regra de negócio com interface de console.
+- O histórico é mantido em memória através de um `ArrayList<String>`, sem persistência.
+
+## 🗄️ Modelagem do Banco de Dados
+
+Não se aplica — o sistema não utiliza banco de dados. O histórico de conversões é armazenado apenas em memória (`ArrayList`) durante a execução do programa e é perdido ao encerrar a aplicação.
+
+---
+
+## 📋 Pré-requisitos
+
+- Java Development Kit (JDK) instalado
+- IDE Eclipse (ou outra IDE Java compatível)
+
+## 🚀 Instalação
+
+1. Faça o download ou clone este repositório.
+2. Importe a pasta `ConversorUnidadesMoedas` no Eclipse como um projeto Java existente (**File → Import → Existing Projects into Workspace**).
+
+## ▶️ Como Executar
+
+1. Abra a classe `Main.java`.
+2. Execute como **Java Application** (`Run As → Java Application`).
+3. Interaja pelo console: escolha uma categoria, informe os valores solicitados e veja o resultado.
+4. A qualquer momento, escolha a opção **4** no menu principal para ver o histórico da sessão.
+
+---
+
+## 🧱 Estrutura do Projeto
 
 ```
 ConversorUnidadesMoedas/
@@ -55,29 +117,61 @@ ConversorUnidadesMoedas/
         └── Historico.java               # Armazena e exibe o histórico de conversões (ArrayList)
 ```
 
-Cada classe de conversão tem uma responsabilidade única, o que mantém o `Main` focado no fluxo do menu e na interação com o usuário — sem misturar regra de negócio com interface de console.
+---
+
+## 💡 Exemplos de Uso
+
+**Conversão de temperatura (Kelvin → Celsius):**
+```
+Digite a temperatura em Kelvin: 100
+Resultado em Celsius: -173,15 °C
+```
+
+**Conversão de comprimento (Metros → Centímetros):**
+```
+Digite o valor em metros: 90
+Resultado: 9000,00 cm
+```
+
+**Conversão de moeda (Real → Dólar):**
+```
+Digite o valor em reais: 500
+Resultado: US$ 100,00
+```
+
+**Histórico da sessão:**
+```
+========== HISTÓRICO ==========
+1. 100,00 K → -173,15 °C
+2. 90,00 m → 9000,00 cm
+3. R$ 500,00 → US$ 100,00
+================================
+```
+
+## 🔌 API
+
+Não se aplica — o projeto é uma aplicação de console e não expõe endpoints de API.
+
+## 🖼️ Capturas de Tela
+
+- Interface
+<img width="1445" height="943" alt="Interface" src="https://github.com/user-attachments/assets/f302f63b-1d0f-476a-b373-07b830164f4f" />
+
+- Submenu de conversão de comprimento
+<img width="1449" height="792" alt="Cnv de Comprimento" src="https://github.com/user-attachments/assets/2e05ed91-b3b9-4df8-a438-e63097976374" />
+
+- Submenu de conversão de moedas
+<img width="1443" height="775" alt="Cnv de Moedas" src="https://github.com/user-attachments/assets/48dd101d-8389-409e-89d7-00896ed59699" />
+
+- Submenu de conversão de temperatura (Kelvin → Celsius)
+<img width="1448" height="748" alt="Cnv Temperatura" src="https://github.com/user-attachments/assets/f7dab8a0-a363-41f7-be63-a11b870dbe68" />
+
+- Exibição do histórico de conversões
+<img width="1442" height="780" alt="Exibição do Histórico" src="https://github.com/user-attachments/assets/e076a3fe-770f-4f29-bf6d-5b9d8409ccb0" />
 
 ---
 
-## ✅ Validações implementadas
-
-- **Entradas não numéricas** (ex.: digitar `abc` em vez de um número) são rejeitadas com uma mensagem de erro, e o programa pede a entrada novamente.
-- **Valores negativos** são bloqueados onde não fazem sentido físico ou financeiro (comprimento, moedas e Kelvin), exibindo mensagem de erro.
-- **Opções inválidas de menu** exibem aviso e retornam ao próprio menu, sem travar o programa.
-
----
-
-## ▶️ Como executar
-
-1. Importe a pasta `ConversorUnidadesMoedas` no Eclipse como um projeto Java existente (**File → Import → Existing Projects into Workspace**).
-2. Abra a classe `Main.java`.
-3. Execute como **Java Application** (`Run As → Java Application`).
-4. Interaja pelo console: escolha uma categoria, informe os valores solicitados e veja o resultado.
-5. A qualquer momento, escolha a opção **4** no menu principal para ver o histórico da sessão.
-
----
-
-## 🧪 Testes realizados
+## 🧪 Testes Realizados
 
 Os testes cobriram os três módulos de conversão, tratamento de entradas inválidas, valores negativos e o histórico. Todos os casos retornaram o resultado esperado:
 
@@ -91,9 +185,7 @@ Os testes cobriram os três módulos de conversão, tratamento de entradas invá
 | 6 | Kelvin negativo | -10 K | mensagem de erro | ✅ OK |
 | 7 | Histórico | várias conversões | histórico exibido corretamente | ✅ OK |
 
----
-
-## ✅ Conformidade com os requisitos do projeto
+## ✅ Conformidade com os Requisitos do Projeto
 
 | Requisito | Como foi atendido |
 |---|---|
@@ -105,9 +197,7 @@ Os testes cobriram os três módulos de conversão, tratamento de entradas invá
 | Modularização (sem lógica no `main`) | Cada menu é um método separado; conversões ficam em classes próprias |
 | Tratamento de exceções | Validação de texto inválido e de valores negativos |
 
----
-
-## 🛠️ Etapas de desenvolvimento
+## 🛠️ Etapas de Desenvolvimento
 
 1. Criação da estrutura inicial do projeto e das classes principais
 2. Implementação das conversões de temperatura
@@ -120,9 +210,14 @@ Os testes cobriram os três módulos de conversão, tratamento de entradas invá
 
 ---
 
-## 🧑‍💻 Tecnologias
+## 📈 Status do Projeto
 
-- Java SE
-- IDE Eclipse
-- `java.util.Scanner` para entrada de dados
-- `java.util.ArrayList` para o histórico (100% em memória, sem persistência em arquivo ou banco de dados)
+Concluído (MVP entregue para a disciplina)
+
+## 🔭 Melhorias Futuras
+
+A ser definido pela equipe
+
+## 📄 Licença
+
+"Projeto acadêmico desenvolvido para fins educacionais na disciplina de Elicitação e Programação — UNICEPLAC. Uso restrito aos fins do curso."
