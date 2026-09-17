@@ -1,4 +1,4 @@
-# 🔄 Conversor de Unidades e Moedas
+# Conversor de Unidades e Moedas
 
 ## 🎓 Identificação Acadêmica
 
