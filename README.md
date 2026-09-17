@@ -7,16 +7,14 @@
 * **Disciplina:** Elicitação e Programação 
 * **Orientador:** Profº Hudson Neves
 
-## 👥 Equipe do Projeto
+## 👥 Desenvolvedores do Projeto
+* Anna Gabriela Dimas Furtado
+* Brenda Sousa Costa 
+* Nikoly Karoline De Paula Pereira
+* Maria Vitória Pereira dos Santos 
+* Matheus Souza de Jesus
+* Thallys Maycon de Jesus Silva 
 
-| Desenvolvedores |
-|---|
-| Anna Gabriela Dimas Furtado |
-| Brenda Sousa Costa |
-| Nikoly Karoline De Paula Pereira |
-| Maria Vitória Pereira dos Santos |
-| Matheus Souza de Jesus |
-| Thallys Maycon de Jesus Silva |
 
 ## 🎥 Vídeo do Pitch Técnico
 
